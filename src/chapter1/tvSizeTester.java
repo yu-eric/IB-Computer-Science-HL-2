@@ -8,7 +8,7 @@ public class tvSizeTester {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the diagonal length in inches: ");
         double diagSize = in.nextDouble();
-
-        System.out.println("The diagonal size of " + diagSize + " inches leads to a width of " + tv;);
+        tv.aspectRatioToSize(diagSize);
+        System.out.printf("The diagonal length of %.2f inches results in a height of %.2f inches and a width of %.2f inches.", diagSize, tv.getHeight(), tv.getLength());
     }
 }

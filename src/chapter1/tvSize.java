@@ -2,16 +2,21 @@ package chapter1;
 
 public class tvSize {
 
-    double length, height;
-    int diagonalLength;
-
-    public tvSize() {
-       this.diagonalLength = diagonalLength;
-
+    public double getLength() {
+        return length;
     }
-    public void aspectRatioToSize(int diagonalLength) {
+
+    public double getHeight() {
+        return height;
+    }
+
+    double length, height;
+    double diagonalLength;
+
+    public void aspectRatioToSize(double diagonalLength) {
         length = Math.sqrt((256 * Math.pow(diagonalLength, 2)) / 337);
         height = (9 * length) / 16;
     }
+
 
 }
