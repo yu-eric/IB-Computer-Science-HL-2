@@ -7,6 +7,9 @@ import java.awt.geom.Line2D;
  */
 public class Triangle {
     private double x0, y0, x1, y1, x2, y2;
+    Line2D.Double line1;
+    Line2D.Double line2;
+    Line2D.Double line3;
 
     /**
      *
@@ -24,11 +27,13 @@ public class Triangle {
         y0 = usery0;
         y1 = usery1;
         y2 = usery2;
+
+        line1 = new Line2D.Double(x0, y0, x1, y1);
+        line2 = new Line2D.Double(x1, y1, x2, y2);
+        line3 = new Line2D.Double(x2, y2, x0, y0);
     }
 
-    Line2D line1 = new Line2D.Double(x0, y0, x1, y1);
-    Line2D line2 = new Line2D.Double(x1, y1, x2, y2);
-    Line2D line3 = new Line2D.Double(x2, y2, x0, y0);
+
 
     /**
      * Computes the length of line 1

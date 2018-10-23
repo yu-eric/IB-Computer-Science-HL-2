@@ -21,8 +21,8 @@ public class TriangleTester {
 
         System.out.printf("%12s %12s %12s %12s \n", "Side Lengths", "Angles", "Perimeter", "Area");
         System.out.println("----------------------------------------------------");
-        System.out.printf("%12s %12s %12s %12s \n", triangle.getLine1Length(), triangle.getAngle1(), triangle.getPerimeter(), triangle.getArea());
-        System.out.printf("%12s %12s \n", triangle.getLine2Length(), triangle.getAngle2());
-        System.out.printf("%12s %12s \n", triangle.getLine3Length(), triangle.getAngle3());
+        System.out.printf("%12.2f %12.2f %12.2f %12.2f \n", triangle.getLine1Length(), triangle.getAngle1(), triangle.getPerimeter(), triangle.getArea());
+        System.out.printf("%12.2f %12.2f \n", triangle.getLine2Length(), triangle.getAngle2());
+        System.out.printf("%12.2f %12.2f \n", triangle.getLine3Length(), triangle.getAngle3());
     }
 }
