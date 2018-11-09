@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>chapter4.Triangle</OriginalElement>
+  <nodes>
+    <node x="0.0" y="250.0">chapter4.TriangleTester</node>
+    <node x="0.0" y="0.0">chapter4.Triangle</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="61.5" y="128.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
