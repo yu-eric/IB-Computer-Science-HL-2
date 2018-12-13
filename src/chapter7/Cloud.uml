@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>chapter7.Cloud</OriginalElement>
+  <nodes>
+    <node x="192.72727272727272" y="145.27272727272728">chapter7.CloudComponent</node>
+    <node x="224.54545454545453" y="40.90909090909091">chapter7.Cloud</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.1" x="336.8181818181818" y="249.5454545454545" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

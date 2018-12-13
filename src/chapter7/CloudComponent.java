@@ -5,8 +5,15 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+/**
+ * Draws a cloud based on 100 random points
+ */
 public class CloudComponent extends JComponent {
 
+	/**
+	 * Paints a cloud
+	 * @param g the graphics object
+	 */
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		Cloud cloud = new Cloud();
@@ -15,8 +22,8 @@ public class CloudComponent extends JComponent {
 		double y = 0;
 
 		for(int i = 0; i < 100; i++) {
-			x = getWidth() + random.nextDouble();
-			y = getWidth() + random.nextDouble();
+			x = getWidth() * random.nextDouble();
+			y = getWidth() * random.nextDouble();
 			Point2D.Double point = new Point2D.Double(x, y);
 			cloud.add(point);
 		}

@@ -3,6 +3,7 @@ package chapter7;
 import javax.swing.*;
 
 public class CloudViewer {
+
 	public static void main(String[] args) {
 		Cloud cloud = new Cloud();
 		JFrame frame = new JFrame("Cloud Points");
