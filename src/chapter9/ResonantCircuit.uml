@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>chapter9.ResonantCircuit</OriginalElement>
+  <nodes>
+    <node x="0.0" y="300.0">chapter9.ParallelResonantCircuit</node>
+    <node x="190.0" y="300.0">chapter9.SeriesResonantCircuit</node>
+    <node x="48.5" y="0.0">chapter9.ResonantCircuit</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="chapter9.SeriesResonantCircuit" target="chapter9.ResonantCircuit">
+      <point x="0.0" y="-25.5" />
+      <point x="271.0" y="275.0" />
+      <point x="242.75" y="275.0" />
+      <point x="64.75" y="125.0" />
+    </edge>
+    <edge source="chapter9.ParallelResonantCircuit" target="chapter9.ResonantCircuit">
+      <point x="0.0" y="-25.5" />
+      <point x="85.0" y="275.0" />
+      <point x="113.25" y="275.0" />
+      <point x="-64.75" y="125.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="176.0" y="74.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

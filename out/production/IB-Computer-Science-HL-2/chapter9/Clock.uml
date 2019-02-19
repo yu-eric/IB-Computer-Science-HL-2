@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>chapter9.Clock</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">chapter9.Clock</node>
+    <node x="11.0" y="168.0">chapter9.WorldClock</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="chapter9.WorldClock" target="chapter9.Clock">
+      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="55.0" y="54.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
