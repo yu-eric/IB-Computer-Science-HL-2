@@ -17,6 +17,9 @@ public class ScrollingFrame extends JFrame {
     private static final int fontStyleValues[] = {Font.PLAIN, Font.BOLD, Font.ITALIC};
     private static final String fontFamily[] = {Font.MONOSPACED, Font.SERIF, Font.SANS_SERIF, Font.DIALOG};
 
+    /**
+     * Initializes the frame with all buttons
+     */
     public ScrollingFrame(){
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -90,6 +93,9 @@ public class ScrollingFrame extends JFrame {
         //Set Frame Size
     }
 
+    /**
+     * Listens for the text being scrolled
+     */
     private class ScrollListener implements ActionListener{
 
         @Override
@@ -98,6 +104,10 @@ public class ScrollingFrame extends JFrame {
             repaint();
         }
     }
+
+    /**
+     * Listens for a change in font style
+     */
     private class FontStyleListener implements ActionListener{
         private JComboBox comboBox;
 
@@ -105,6 +115,10 @@ public class ScrollingFrame extends JFrame {
             this.comboBox = comboBox;
         }
 
+        /**
+         * Listens for a change in font family / size
+         * @param actionEvent the event
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             Font font = component.getFont();
@@ -113,6 +127,10 @@ public class ScrollingFrame extends JFrame {
             repaint();
         }
     }
+
+    /**
+     * Listens for a change in font name
+     */
     private class FontNameListener implements ActionListener{
         private JComboBox comboBox;
 
@@ -120,6 +138,10 @@ public class ScrollingFrame extends JFrame {
             this.comboBox = comboBox;
         }
 
+        /**
+         * Listens for a change in font family / size
+         * @param actionEvent the event
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             Font font = component.getFont();
@@ -129,6 +151,9 @@ public class ScrollingFrame extends JFrame {
         }
     }
 
+    /**
+     * Inner class for creating listeners for all buttons
+     */
     private class BackgroundColorListener implements ActionListener{
         private Component backgroundComponent;
 
@@ -136,6 +161,10 @@ public class ScrollingFrame extends JFrame {
             this.backgroundComponent = backgroundComponent;
         }
 
+        /**
+         * Listens for change in background color
+         * @param actionEvent
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             Color backgroundColor = JColorChooser.showDialog(backgroundComponent, "Background Color", Color.WHITE);
@@ -145,6 +174,10 @@ public class ScrollingFrame extends JFrame {
             }
         }
     }
+
+    /**
+     * Listens for changes within the frame
+     */
     private class ForegroundColorListener implements ActionListener{
         private Component colorComponent;
 
@@ -152,6 +185,10 @@ public class ScrollingFrame extends JFrame {
             this.colorComponent = component;
         }
 
+        /**
+         * Listens for changes in foreground color
+         * @param actionEvent the change in color
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             Color foregroundColor = JColorChooser.showDialog(colorComponent, "Foreground Color", Color.BLACK);
@@ -161,6 +198,10 @@ public class ScrollingFrame extends JFrame {
             }
         }
     }
+
+    /**
+     * Listens for change in the message
+     */
     private class MessageMutatorListener implements ActionListener{
         private JTextField field;
 
@@ -168,6 +209,10 @@ public class ScrollingFrame extends JFrame {
             this.field = field;
         }
 
+        /**
+         * Repaints the message once action occurs
+         * @param actionEvent action to change text
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             component.setMessage(field.getText());
@@ -175,6 +220,9 @@ public class ScrollingFrame extends JFrame {
         }
     }
 
+    /**
+     * Changes direction of text
+     */
     private class DirectionListener implements ActionListener{
 
         @Override
@@ -184,6 +232,9 @@ public class ScrollingFrame extends JFrame {
         }
     }
 
+    /**
+     * Decreases speed of text
+     */
     private class SlowerListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
@@ -191,6 +242,9 @@ public class ScrollingFrame extends JFrame {
         }
     }
 
+    /**
+     * Increases speed of text
+     */
     private class FasterListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent actionEvent) {

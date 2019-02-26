@@ -24,6 +24,10 @@ public class ScrollingComponent extends JComponent {
         this.y = y;
     }
 
+    /**
+     * Paints the GUI
+     * @param g graphics object
+     */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
@@ -46,14 +50,24 @@ public class ScrollingComponent extends JComponent {
         textLayout.draw(g2, x, y);
     }
 
+    /**
+     * Moves the text horizontally
+     */
     public void move(){
         x += direction;
     }
 
+    /**
+     * Reverses the direction of the text
+     */
     public void reverse(){
         direction *= -1;
     }
 
+    /**
+     * Sets the message to be scrolled
+     * @param message entered by user
+     */
     public void setMessage(String message){
         this.message = message;
     }

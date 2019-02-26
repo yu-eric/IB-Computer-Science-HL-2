@@ -1,8 +1,6 @@
 package chapter10;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
@@ -13,7 +11,8 @@ import javax.swing.JFrame;
  */
 public class TicTacToe extends JFrame {
 
-		private static final int EMPTY = 0,X_PIECE = 1,O_PIECE = 2;
+	public static class GameBoard extends Canvas {
+		private static final int EMPTY = 0, X_PIECE = 1, O_PIECE = 2;
 		private int[][] gameGrid = new int[3][3];
 		private boolean xTurn;
 		private Random random;
@@ -25,48 +24,54 @@ public class TicTacToe extends JFrame {
 		 */
 		private class GameListener implements MouseListener {
 
-			public void mousePressed(MouseEvent e){
+			public void mousePressed(MouseEvent e) {
 
 			}
 
 			public void mouseClicked(MouseEvent e) {
 				int xPos = e.getPoint().x;
 				int yPos = e.getPoint().y;
-				if(xPos > 50 && yPos > 50 && xPos < 50+50*3 && yPos < 50+50*3) {
+				if (xPos > 50 && yPos > 50 && xPos < 50 + 50 * 3 && yPos < 50 + 50 * 3) {
 
-					if(!gameRunning) {
+					if (!gameRunning) {
 						wipeGrid();
 						gameRunning = true;
 						repaint();
-						return; }
-					if(gameGrid[xPos/50-1][yPos/50-1] != EMPTY)
+						return;
+					}
+					if (gameGrid[xPos / 50 - 1][yPos / 50 - 1] != EMPTY)
 						return;
 
-					if(xTurn) {
-						gameGrid[xPos/50-1][yPos/50-1] = X_PIECE;
+					if (xTurn) {
+						gameGrid[xPos / 50 - 1][yPos / 50 - 1] = X_PIECE;
 						xTurn = false;
-					}
-					else {
-						gameGrid[xPos/50-1][yPos/50-1] = O_PIECE;
+					} else {
+						gameGrid[xPos / 50 - 1][yPos / 50 - 1] = O_PIECE;
 						xTurn = true;
 					}
 					gameResult = gameOver();
-					if(gameResult != 0) {
+					if (gameResult != 0) {
 						gameRunning = false;
 					}
 					repaint();
 				}
 			}
-			public void mouseReleased(MouseEvent e){}
-			public void mouseEntered(MouseEvent e){}
-			public void mouseExited(MouseEvent e){}
+
+			public void mouseReleased(MouseEvent e) {
+			}
+
+			public void mouseEntered(MouseEvent e) {
+			}
+
+			public void mouseExited(MouseEvent e) {
+			}
 		}
 
 		/**
 		 * Creates a new game board
 		 */
-		public TicTacToe() {
-			setPreferredSize(new Dimension(256,256));
+		public GameBoard() {
+			setPreferredSize(new Dimension(260, 260));
 			setBackground(Color.WHITE);
 			addMouseListener(new GameListener());
 			random = new Random();
@@ -78,10 +83,10 @@ public class TicTacToe extends JFrame {
 		 * Clears the game board of all pieces
 		 */
 		public void wipeGrid() {
-			for(int y = 0; y < 3; y++)
-				for(int x = 0; x < 3; x++)
+			for (int y = 0; y < 3; y++)
+				for (int x = 0; x < 3; x++)
 					gameGrid[x][y] = EMPTY;
-			if(random.nextInt(100) < 50)
+			if (random.nextInt(100) < 50)
 				xTurn = true;
 			else
 				xTurn = false;
@@ -90,7 +95,7 @@ public class TicTacToe extends JFrame {
 		/**
 		 * Checks to see if the game is over
 		 *
-		 * @return  0 if not over, 1 if X wins, 2 if O wins, 3 if a tie
+		 * @return 0 if not over, 1 if X wins, 2 if O wins, 3 if a tie
 		 */
 		public int gameOver() {
 			for (int x = 0; x < 3; x++) {
@@ -125,48 +130,49 @@ public class TicTacToe extends JFrame {
 		public void paint(Graphics g) {
 			g.clearRect(0, 0, getWidth(), getHeight());
 			g.setColor(Color.BLACK);
-			for(int y = 1;y < 3;y++) {
+			for (int y = 1; y < 3; y++) {
 				g.drawLine(50, y * 50 + 50, 50 + 50 * 3, y * 50 + 50);
 			}
-			for(int x = 1;x < 3;x++) {
+			for (int x = 1; x < 3; x++) {
 				g.drawLine(x * 50 + 50, 50, x * 50 + 50, 50 + 50 * 3);
 			}
-			for(int y = 0;y < 3;y++)
-			{
-				for(int x = 0;x < 3;x++)
-				{
-					if(gameGrid[x][y] == X_PIECE) {
+			for (int y = 0; y < 3; y++) {
+				for (int x = 0; x < 3; x++) {
+					if (gameGrid[x][y] == X_PIECE) {
 						g.setColor(Color.BLUE);
-						g.drawLine(50 + x * 50,50 + y * 50,50 + x * 50 + 50,50 + y * 50 + 50);
-						g.drawLine(50 + 50 + x * 50,50 + y * 50,50 + x * 50,50 + y * 50 + 50);
+						g.drawLine(50 + x * 50, 50 + y * 50, 50 + x * 50 + 50, 50 + y * 50 + 50);
+						g.drawLine(50 + 50 + x * 50, 50 + y * 50, 50 + x * 50, 50 + y * 50 + 50);
 					}
-					if(gameGrid[x][y] == O_PIECE) {
+					if (gameGrid[x][y] == O_PIECE) {
 						g.setColor(Color.RED);
-						g.drawOval(50 + x * 50,50 + y * 50,50,50);
+						g.drawOval(50 + x * 50, 50 + y * 50, 50, 50);
 					}
 				}
 			}
 			g.setColor(Color.BLACK);
 
-			if(gameRunning) {
-				if(xTurn) {
+			if (gameRunning) {
+				if (xTurn) {
 					g.drawString("It is player X's turn.", 10, 20);
-				}
-				else {
+				} else {
 					g.drawString("It is player O's turn.", 10, 20);
 				}
-			}
-			else {
-				if(gameResult == X_PIECE) {
+			} else {
+				if (gameResult == X_PIECE) {
 					g.drawString("Player X won!", 10, 20);
+					g.drawString("Click on the board to start a new game.", 10, 40);
+
 				}
-				if(gameResult == O_PIECE) {
+				if (gameResult == O_PIECE) {
 					g.drawString("Player O won!", 10, 20);
+					g.drawString("Click on the board to start a new game.", 10, 40);
+
 				}
-				if(gameResult == 3) {
+				if (gameResult == 3) {
 					g.drawString("Tie game!", 10, 20);
-					g.drawString("Click to start a new game.", 10, 40);
+					g.drawString("Click on the board to start a new game.", 10, 40);
 				}
 			}
 		}
 	}
+}
