@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>chapter10.ScrollingComponent</OriginalElement>
+  <nodes>
+    <node x="0.0" y="273.0">chapter10.ScrollingComponent</node>
+    <node x="0.0" y="0.0">chapter10.ScrollingFrame</node>
+    <node x="306.0" y="273.0">chapter10.ScrollingMessageViewer</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="384.7600732600731" y="208.07692307692304" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
