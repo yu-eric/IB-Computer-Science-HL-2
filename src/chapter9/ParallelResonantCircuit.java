@@ -8,7 +8,15 @@ public class ParallelResonantCircuit extends ResonantCircuit {
 	 */
 	public String display() {
 		return "Parallel Resonant Circuit\n" + "Resonant Frequency: " + getResonantFrequency() + "\nBand Width: " + getBandWidth() + "\nGain: " + getGain()
-				+ "\n\nR = " + getGain() + "\nC = " + (1/(getBandWidth() * getGain())
-				+ "\nL = " + (1/(getResonantFrequency() * (1/(getBandWidth() * getGain())))));
+				+ "\n\nR = " + getGain() + "\nC = " + getCapacitance()
+				+ "\nL = " + getInductance();
+	}
+
+	public double getCapacitance() {
+		return 1/getBandWidth() * getGain();
+	}
+
+	public double getInductance() {
+		return 1/(getResonantFrequency() * (1/(getBandWidth() * getGain())));
 	}
 }

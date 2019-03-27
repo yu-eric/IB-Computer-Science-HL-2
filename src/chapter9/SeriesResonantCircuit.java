@@ -8,7 +8,19 @@ public class SeriesResonantCircuit extends ResonantCircuit {
 	 */
 	public String display() {
 		return "Series Resonant Circuit\n" + "Resonant Frequency: " + getResonantFrequency() + "\nBand Width: " + getBandWidth() + "\nGain: "
-				+ getGain() + "\n\nR = " + (1/getGain()) + "\nL = " + (getGain() / getBandWidth()) + "\nC = "
-				+ (1/(getResonantFrequency() * (getGain() / getBandWidth())));
+				+ getGain() + "\n\nR = " + getResistance() + "\nL = " + getInductance() + "\nC = "
+				+ getCapacitance();
+	}
+
+	public double getCapacitance() {
+		return 1/(getResonantFrequency() * (getGain() / getBandWidth()));
+	}
+
+	public double getResistance() {
+		return 1/getGain();
+	}
+
+	public double getInductance() {
+		return getGain() / getBandWidth();
 	}
 }

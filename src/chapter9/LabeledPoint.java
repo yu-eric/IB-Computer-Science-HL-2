@@ -2,9 +2,8 @@ package chapter9;
 
 import java.awt.geom.Point2D;
 
-public class LabeledPoint extends Point2D {
+public class LabeledPoint extends Point2D.Double {
 	private String label;
-	private double x, y;
 
 	/**
 	 * Creates a new LabeledPoint object
@@ -47,7 +46,7 @@ public class LabeledPoint extends Point2D {
 	 */
 	@Override
 	public void setLocation(double x, double y) {
-		this.x = x;
-		this.y = y;
+		super.x = x;
+		super.y = y;
 	}
 }

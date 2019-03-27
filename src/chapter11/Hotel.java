@@ -14,7 +14,7 @@ public class Hotel {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        in.useDelimiter(",");
+        in.useDelimiter(";");
         hotelEvent = new String[3][3];
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
@@ -24,4 +24,14 @@ public class Hotel {
             }
         }
     }
+
+    public double totalCalculator(int index) {
+    	double amount = 0;
+    	try {
+    		amount = Double.parseDouble(hotelEvent[index][1]);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Sorry, that is an invalid index.");
+		}
+		return amount;
+	}
 }
