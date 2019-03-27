@@ -2,4 +2,4 @@
 *.xml
 .DS_Store
 *.class
-/*.class
+~/out
