@@ -1,7 +1,16 @@
 package chapter12;
 
+/**
+ * This class compares the recursive runtime of a fibnoacci series to the iterative runtime
+ */
 public class FastFib {
 
+    /**
+     * Recursive fibonacci method
+     * @param n length of fibbonacci list
+     * @param fibList list of fibonacci series
+     * @return List filled with fibonacci series
+     */
     public long fastFibonacci(int n, long[] fibList) {
         long fibNum = 0;
         if(fibList[n - 1] == 0) {
@@ -21,6 +30,11 @@ public class FastFib {
         return fibList[n - 1];
     }
 
+    /**
+     * Iterative fibonacci method
+     * @param n Length of fibonacci series
+     * @return List of fibonacci
+     */
     public long slowFibonacci(int n) {
         if(n < 2) {
             return n;
