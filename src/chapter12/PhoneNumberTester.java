@@ -3,6 +3,7 @@ package chapter12;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/** @noinspection Duplicates*/
 public class PhoneNumberTester {
     public static void main(String[] args) {
 
