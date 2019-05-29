@@ -1,34 +1,28 @@
 package chapter12;
 
 /**
- * This class compares the recursive runtime of a fibnoacci series to the iterative runtime
+ * This class compares the recursive runtime of a fibonacci series to the iterative runtime
  */
 public class FastFib {
 
     /**
      * Recursive fibonacci method
-     * @param n length of fibbonacci list
+     * @param n length of fibonacci list
      * @param fibList list of fibonacci series
      * @return List filled with fibonacci series
      */
     public long fastFibonacci(int n, long[] fibList) {
-        long fibNum = 0;
-        if(fibList[n - 1] == 0) {
-            if(n < 3) {
-                return 1;
-            } else {
-                fibList[n - 1] = fastFibonacci(n - 1, fibList) + fastFibonacci(n - 2, fibList);
-                fibNum = fibList[n - 1];
-
-//                for(long f : fibList) {
-//                    if(fibNum == f) {
-//                        return f;
-//                    }
-//                }
-            }
-        }
-        return fibList[n - 1];
-    }
+		if (fibList.length <= n) {
+			return fibList[n - 1];
+		} else {
+			if (n < 3) {
+				return 1;
+			} else {
+				fibList[n - 1] = fastFibonacci(n - 1, fibList) + fastFibonacci(n - 2, fibList);
+			}
+		}
+		return fibList[n - 1];
+	}
 
     /**
      * Iterative fibonacci method

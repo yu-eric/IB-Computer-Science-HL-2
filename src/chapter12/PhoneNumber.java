@@ -3,10 +3,16 @@ package chapter12;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class gives all possible spellings of a phone number
+ */
 public class PhoneNumber {
     private HashMap<String, String[]> numToStringMap = new HashMap<>();
 
-    public PhoneNumber() {
+	/**
+	 * Initializes the map with each corresponding letter to a number
+	 */
+	public PhoneNumber() {
         numToStringMap.put("0", new String[]{"_"});
         numToStringMap.put("1", new String[]{"_"});
         numToStringMap.put("2", new String[]{"A","B","C"});
@@ -18,7 +24,13 @@ public class PhoneNumber {
         numToStringMap.put("8", new String[]{"T","U", "V"});
         numToStringMap.put("9", new String[]{"W","X","Y","Z"});
     }
-    public ArrayList<String> getAllPossibleStrings(String x) {
+
+	/**
+	 * Gets all possible strings, real or not, from a string of numbers
+	 * @param x the number in string form
+	 * @return all possible letter combinations
+	 */
+	public ArrayList<String> getAllPossibleStrings(String x) {
 
         String[] letters = numToStringMap.get(x.substring(0, 1));
         if(x.length() == 1) {
