@@ -1,12 +1,19 @@
 package chapter15;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StudentHashTester {
 	public static void main(String[] args) {
-		StudentHash student1 = new StudentHash();
-		StudentHash student2 = new StudentHash();
-		student1.add();
-		student2.add();
+		Set<StudentHash> hashSet = new HashSet<>();
 
-		System.out.println("The two students should be equal: " + student1.equals(student2));
+		System.out.println("Hash Set Size " + hashSet.size());
+		hashSet.add(new StudentHash("Eric", "Yu", 42));
+		System.out.println("Hash Set Size " + hashSet.size());
+		hashSet.add(new StudentHash("Eric", "Yu", 42));
+		System.out.println("Hash Set Size " + hashSet.size());
+		hashSet.add(new StudentHash("Eric", "Yu", 22));
+		System.out.println("Hash Set Size " + hashSet.size());
+
 	}
 }
