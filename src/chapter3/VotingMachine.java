@@ -17,6 +17,8 @@ public class VotingMachine {
 
 
     public void getVotes() {
+        //Investigate using lamdas with stream processing here
+        
         for(String e: votes) {
             if(e.equals("R")) {
                 repubTally ++;
@@ -26,8 +28,13 @@ public class VotingMachine {
         }
     }
 
+    //I would suggest moving this up to the top of the class
+    //also, use the interface when declaring the collection
+    // List<String> votes = new ArrayList<>();
+    
     ArrayList<String> votes = new ArrayList<>();
     public void voteDemocrat() {
+        //you could just bump the counter and not use the colleciton
         votes.add("D");
     }
 
